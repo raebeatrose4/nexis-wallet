@@ -155,13 +155,15 @@ const AccountDetailsDashboard: FC<IProps> = ({
               <div className="mb-4 d-flex justify-content-between">
                 <h4 className="m-0 opacity-85">{t("price")}:</h4>
                 <p className={classnames('m-0', styles.infoValue)}>
-                  $ {parseFloat(ftmToUsdPrice).toFixed(5)}
+                  {/* $ {parseFloat(ftmToUsdPrice).toFixed(5)} todo raebeatrose */}
+                  NA
                 </p>
               </div>
               <div className="mb-4 d-flex justify-content-between">
                 <h4 className="m-0 opacity-85">{t("marketCap")}:</h4>
                 <p className={classnames('m-0', styles.infoValue)}>
-                  $ {marketCapValue}
+                  {/* $ {marketCapValue} todo raebeatrose*/}
+                  NA
                 </p>
               </div>
             </Card>

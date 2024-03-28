@@ -16,7 +16,6 @@ $color: #999999;
   span {
     width: 4px;
     height: 4px;
-    border-radius: 100%;
     background: $color;
     position: relative;
 
@@ -26,7 +25,7 @@ $color: #999999;
       left: -7px;
       width: 4px;
       height: 4px;
-      border-radius: 5px;
+      border-radius: 2px;
       top: 0;
       background: $color;
     }
@@ -48,7 +47,7 @@ $color: #999999;
   top: 0;
   right: 0;
   background: white;
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 4px;
   color: $color_primary;
   font-weight: 600;

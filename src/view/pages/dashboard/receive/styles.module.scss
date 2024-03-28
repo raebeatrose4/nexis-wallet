@@ -33,7 +33,7 @@
   margin: 10px auto 31px;
   display: flex;
   background-color: #f8f9fa;
-  border-radius: 8px;
+  border-radius: 2px;
 
   input {
     background-color: #f8f9fa;
@@ -66,7 +66,7 @@
     background-color: transparent !important;
     width: 40px;
     height: 40px;
-    border-radius: 8px;
+    border-radius: 2px;
     border: solid 2px rgba(43, 57, 84, 0.2);
     color: map-get($color, topaz);
   }

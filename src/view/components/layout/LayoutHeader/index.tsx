@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '~/images/logo/fantom-logo-white.svg';
+import logo from '~/images/logo/nexis-logo.png';
 import styles from './styles.module.scss';
 import { URLS } from '~/constants/urls';
 import { getURL } from '~/utility/dom';

@@ -53,10 +53,10 @@
 
   @media (min-width: $largeDesktop) {
     padding-top: 40px;
-    border-top-right-radius: 50px;
+    border-top-right-radius: 2px;
   }
   @media (max-width: $largeDesktop) {
-    border-top-left-radius: 50px;
+    border-top-left-radius: 2px;
   }
   .head {
     @media (max-width: $largeDesktop) {
@@ -65,7 +65,7 @@
       height: 84px;
       left: 0;
       top: 0;
-      border-top-left-radius: 50px;
+      border-top-left-radius: 2px;
       background: map-get($color, Primary-Main);
       z-index: 1;
       display: flex;

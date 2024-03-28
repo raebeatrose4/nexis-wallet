@@ -300,7 +300,6 @@ function* getBalance({ id }: ReturnType<typeof accountGetBalance>) {
 
     const balance = yield call([NexisNetwork, NexisNetwork.getBalance], id);
   
-    // const { error, data } = yield call(getTransactions, id, 0, 10);
     // console.log(error, '******error')
     // if (!error && data.data && data.data.account) {
     //   const balanceStr = data.data.account.balance.toString();

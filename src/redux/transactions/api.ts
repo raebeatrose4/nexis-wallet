@@ -5,9 +5,9 @@ export const getTransactions = (
   offset: number,
   count: number
 ) => {
-  // return API.get(URLS.GET_ACCOUNT, { params: { address, offset, count } })
-  //   .then(resultMiddleware)
-  //   .catch(errorMiddleware);
+  return API.get(`https://evm-testnet.nexscan.io/api/v2/addresses/${address}`)
+    .then(resultMiddleware)
+    .catch(errorMiddleware);
   return "";
 };
 

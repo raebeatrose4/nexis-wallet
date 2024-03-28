@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import { MenuIcon } from 'src/view/components/svgIcons';
 import LanguageDropDown from './LanguageDropdown'
-import logoWhite from 'src/images/logo/fantom-logo-white.svg';
-import logo from 'src/images/logo/fantom-logo.svg';
+import logoWhite from 'src/images/logo/nexislogo.svg';
+import logo from 'src/images/logo/nexislogodark.svg';
 import LogoutIcon from 'src/images/icons/sidebar/logout.svg';
 
 import menus from './menus';
@@ -62,7 +62,7 @@ const {handleLogout} = props
           <div className={styles.head}>
             <Link to="/">
               <div className={styles.logoWrapper}>
-                <img src={logoWhite} alt="Nexis Network" />
+                <img src={logoWhite} alt="Nexis Network" width={'30%'} />
               </div>
             </Link>
             <button

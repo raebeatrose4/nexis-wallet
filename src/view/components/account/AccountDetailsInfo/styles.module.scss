@@ -51,7 +51,6 @@
   align-items: center;
   justify-content: center;
   margin: 10px;
-  border-radius: 100%;
 }
 
 .name {
@@ -79,7 +78,7 @@
   border: 2px solid lighten($color_lightgray, 8%);
   background: lighten($color_lightgray, 2%);
   padding: 2rem 2rem;
-  border-radius: 8px;
+  border-radius: 2px;
   font-size: 22px;
   align-self: stretch;
   position: relative;
@@ -91,7 +90,6 @@
   left: 50%;
   transform: translate(-50%, 0);
   background: $color_gray;
-  border-radius: 100%;
   cursor: pointer;
 }
 

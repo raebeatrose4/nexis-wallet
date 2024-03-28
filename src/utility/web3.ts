@@ -13,10 +13,7 @@ import BigInt from 'big-integer';
 import { contractFunctions } from './constants';
 
 const {
-  REACT_APP_API_URL_FANTOM,
   REACT_APP_API_URL_WEB3,
-  API_URL_FANTOM,
-  KEY_INFURA,
 } = process.env;
 
 export const DEFAULT_PROVIDERS: INodeRecord[] = [
@@ -328,7 +325,7 @@ class Web3Agent {
   async getAccount(address: string) {
     // eslint-disable-next-line no-return-await
     return await fetch(
-      `${REACT_APP_API_URL_FANTOM}api/v1/get-account?address=${address}`
+      `https://evm-testnet.nexscan.io/api/v2/addresses/${address}`
     );
   }
 }

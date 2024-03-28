@@ -10,7 +10,6 @@ const BigInt = require('big-integer');
 const { contractFunctions } = require('./constants');
 
 const REACT_APP_API_URL_WEB3 = 'https://evm-testnet.nexis.network/'
-const REACT_APP_API_URL_FANTOM = 'https://api.fantom.network/api/v1/'
 
 let web3 = new Web3(new Web3.providers.HttpProvider(REACT_APP_API_URL_WEB3 || ''));
 
@@ -238,7 +237,7 @@ export const privateKeyToKeys = (privateKey) => {
 
 export const getAccount = async (address) => {
 	// eslint-disable-next-line no-return-await
-	return await fetch(`${REACT_APP_API_URL_FANTOM}api/v1/get-account?address=${address}`);
+	return await fetch(`https://evm-testnet.nexscan.io/api/v2/addresses/${address}`);
 }
 
 export const estimateFeeMobile = async (value) => {

@@ -7,5 +7,5 @@ export default [
   { name: 'Dashboard', icon: DashboardIcon },
   { name: 'Send', icon: SendIcon },
   { name: 'Receive', icon: ReceiveIcon },
-  { name: 'Stake', icon: StakeIcon },
+  // { name: 'Stake', icon: StakeIcon },
 ];

@@ -37,7 +37,7 @@
     left: 0;
     padding-bottom: 5px;
     .tooltip {
-      border-radius: 19px;
+      border-radius: 2px;
       box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
       font-size: 12px;
       font-weight: 400;
@@ -90,13 +90,13 @@
   margin-top: 30px;
   .downloadBtn {
     cursor: pointer;
-    border-radius: 25px;
+    border-radius: 2px;
     font-size: 16px;
     font-weight: 600;
     color: map-get($color, dark-grey-blue);
     background: transparent;
     outline: 0 !important;
-    border: 2px solid #0ebec2;
+    border: 2px solid #131313;
     padding: 13px 30px;
     &.disable {
       color: #fff;

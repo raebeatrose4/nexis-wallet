@@ -5,7 +5,7 @@
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Card, Collapse } from 'reactstrap';
 import styles from './styles.module.scss';
 import i18n from "i18next";
@@ -18,6 +18,7 @@ import { mockComponent } from 'react-dom/test-utils';
 import Web3 from 'web3';
 import moment from 'moment';
 import { useTranslation } from "react-i18next";
+import { API } from '~/constants/api';
 
 const FANTOM_WEB_URL = 'https://explorer.fantom.network'
 
@@ -92,17 +93,16 @@ const SubView = (props: any) => {
 };
 
 const Activities = (props: any) => {
-  const newTime = new Date(props.data.timestamp * 1000);
-  const { time, ftm, subView = [], t } = props;
+  const newDate = new Date(props.data.timestamp).toDateString();
+  const {t} = props;
   const [isOpen, setIsOpen] = useState(false);
-  const newDate = formatActivities(props.data.timestamp , t);
   const isRecieve = props.data.from === props.address.toLowerCase();
   return (
     <div className={styles.activities}>
       <div className={styles.activitiesRow} onClick={() => setIsOpen(!isOpen)}>
         <p className={styles.status}>
           {isRecieve ? <SendIcon /> : <ReceiveIcon />}
-          {isRecieve ? t("sent") : t("receive")}
+          {isRecieve ? "Sent" : "Receive"}
         </p>
         <div
           className={`d-flex justify-content-between w-100 ${styles.timeFtmWrapper}`}
@@ -133,6 +133,28 @@ const Activities = (props: any) => {
 export default props => {
   const {transactionHashDetails} = props
   const { t } = useTranslation();
+  const [transactions,setTransactions] = useState<any>([]);
+  useEffect(()=>{
+    const handleTx = async()=>{
+      let tempArr:any=[];
+      const response = await API.get(`https://evm-testnet.nexscan.io/api/v2/addresses/${props.address}/transactions?filter=to%20%7C%20from`)
+      for(let i=0;i<response.data.items.length;i++){
+        console.log(response.data.items[i]);
+        tempArr.push({
+          data:{
+            timestamp:response.data.items[i].timestamp,
+            to:response.data.items[i].to.hash,
+            from: response.data.items[i].from.hash,
+            fee:response.data.items[i].fee.value,
+            value:response.data.items[i].value,
+            hash:response.data.items[i].hash
+          }
+        })
+      }
+      setTransactions(tempArr)
+    }
+    handleTx()
+  },[])
 
   return (
     <Card className={styles.card}>
@@ -140,14 +162,14 @@ export default props => {
       <div>
         
         {props &&
-          props.transactions &&
-          props.transactions.length > 0 &&
-          props.transactions.map((data: any, index: number) => {
+          transactions &&
+          transactions.length > 0 &&
+          transactions.map((data: any, index: number) => {
             let memo = ''
             if(!!transactionHashDetails && transactionHashDetails[data.hash] !== ''){
                 memo = transactionHashDetails[data.hash]
             }
-            return <Activities t={t} key={index} memo={memo} data={data} address={props.address} />
+            return <Activities t={t} key={index} memo={memo} data={data.data} address={props.address} />
 })}
       </div>
     </Card>

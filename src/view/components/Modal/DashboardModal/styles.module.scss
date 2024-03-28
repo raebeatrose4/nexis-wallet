@@ -5,7 +5,7 @@
     max-width: 680px;
   }
   > div {
-    border-radius: 22px 22px 20px 20px;
+    border-radius: 2px;
     border: 0;
     box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.06);
     @media (min-width: $tablet) {
@@ -18,8 +18,8 @@
   align-items: center;
   min-height: 60px;
   background: map-get($color, Primary-Main);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
   h5 {
     color: #fff;
     font-size: 24px;

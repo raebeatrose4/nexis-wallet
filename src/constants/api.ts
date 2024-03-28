@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const API = axios.create({
-  baseURL: process.env.REACT_APP_API_URL_FANTOM,
+  baseURL: `https://evm-testnet.nexscan.io/api/v2/`,
   timeout: 10000,
 });
 

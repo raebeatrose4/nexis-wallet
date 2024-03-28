@@ -7,7 +7,7 @@ export const englishTranslation = {
   "stakeFTM": "Stake your NZT",
   "collectRewards": "Collect your rewards",
   "accessNow": "Access now",
-  "welcomeFantomWallet": "Welcome to NexisWallet",
+  "welcomeFantomWallet": "Welcome to Nexis Wallet",
   "sendReceiveStakeFTM": "Send, receive and stake your NZT",
   "address": "Address",
   "balance": "Balance",

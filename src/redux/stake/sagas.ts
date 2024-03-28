@@ -103,20 +103,6 @@ export function* delegateByAddressesSaga() {
   }
 }
 
-// export function* delegateByStakerIdSaga({
-//   payload: { stakerId },
-// }: ReturnType<typeof delegateByStakerId>) {
-//   try {
-//     const res = yield call(
-//       fetch,
-//       `${process.env.REACT_APP_API_URL_FANTOM}api/v1/delegator/staker/${stakerId}`
-//     );
-//     const data = yield call([res, 'json']);
-   
-//   } catch (e) {
-//     console.log(e, '****error')
-//   }
-// }
 
 export function* delegateAmountSaga({
   publicKey,
